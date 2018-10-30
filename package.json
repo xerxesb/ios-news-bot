@@ -1,0 +1,8 @@
+{
+    "name": "ios-news-bot",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "xslt-processor": "*"
+    }
+}
