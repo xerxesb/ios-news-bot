@@ -1,8 +1,26 @@
 exports.handler = function(event, context, callback) {
-  const libxslt = require('libxslt');
-  const fs = require("fs");
+  let inputFeed = getNewsFeed();
+  let outputFeed = filterFeedToOnlyIncludeiOS(inputFeed);
 
-  let xmlString = fs.readFileSync("./testdata/releases1.rss").toString();
+  var response = {
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application/rss+xml"
+    },
+    "body": outputFeed,
+    "isBase64Encoded": false
+  };
+
+  callback(null, response);
+} 
+
+function getNewsFeed() {
+  const fs = require("fs");
+  return fs.readFileSync("./testdata/releases1.rss").toString();
+}
+
+function filterFeedToOnlyIncludeiOS(inputFeed) {
+  const libxslt = require('libxslt');
   let xsltString = `<?xml version="1.0"?> 
   <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  version="1.0"> 
 
@@ -22,16 +40,5 @@ exports.handler = function(event, context, callback) {
   </xsl:stylesheet>`
 
   var stylesheet = libxslt.parse(xsltString);
-  var result = stylesheet.apply(xmlString);
-
-  var response = {
-    "statusCode": 200,
-    "headers": {
-        "Content-Type": "application/rss+xml"
-    },
-    "body": result,
-    "isBase64Encoded": false
-  };
-
-  callback(null, response);
-} 
+  return stylesheet.apply(inputFeed);  
+}
