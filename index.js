@@ -1,18 +1,21 @@
 exports.handler = function(event, context, callback) {
   let inputFeed = getNewsFeed();
   let outputFeed = filterFeedToOnlyIncludeiOS(inputFeed);
+  var response = generateResponse(outputFeed);
 
-  var response = {
+  callback(null, response);
+} 
+
+function generateResponse(outputFeed) {
+  return {
     "statusCode": 200,
     "headers": {
-        "Content-Type": "application/rss+xml"
+      "Content-Type": "application/rss+xml"
     },
     "body": outputFeed,
     "isBase64Encoded": false
   };
-
-  callback(null, response);
-} 
+}
 
 function getNewsFeed() {
   const fs = require("fs");
