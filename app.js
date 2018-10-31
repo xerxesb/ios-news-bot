@@ -1,11 +1,7 @@
-//import { xsltProcess, xmlParse } from "xslt-processor"
-
-const xsltProcess = require("xslt-processor").xsltProcess;
-const xmlParse = require("xslt-processor").xmlParse;
-
+const libxslt = require('libxslt');
 const fs = require("fs");
-let xmlString = fs.readFileSync("./testdata/releases1.rss").toString();
 
+let xmlString = fs.readFileSync("./testdata/releases1.rss").toString();
 let xsltString = `<?xml version="1.0"?> 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  version="1.0"> 
 
@@ -24,8 +20,7 @@ let xsltString = `<?xml version="1.0"?>
 
 </xsl:stylesheet>`
 
-const xml = xmlParse(xmlString); // xmlString: string of xml file contents
-const xslt = xmlParse(xsltString); // xsltString: string of xslt file contents
-const outXmlString = xsltProcess(xml, xslt); // outXmlString: output xml string.
+var stylesheet = libxslt.parse(xsltString);
+var result = stylesheet.apply(xmlString);
 
-console.log(outXmlString);
+console.log(result);
