@@ -1,0 +1,7 @@
+{
+  "lambda": {
+    "role": "ios-news-bot-executor",
+    "name": "ios-news-bot",
+    "region": "ap-southeast-2"
+  }
+}
