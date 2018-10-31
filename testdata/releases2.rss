@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<atom:link href="https://developer.apple.com/news/releases/rss/releases.rss" rel="self" type="application/rss+xml" />
+<title>Releases - Apple Developer</title>
+<link>https://developer.apple.com/news/</link>
+<description>Apple Developer News and Updates feed provided by Apple, Inc.</description>
+<language>en-US</language>
+<lastBuildDate>Wed, 31 Oct 2018 10:00:00 PDT</lastBuildDate>
+<generator>Custom</generator>
+<copyright>Copyright 2018, Apple Inc.</copyright>
+
+<item>
+<title>iOS 12.1.1 beta (16C5036c)</title>
+<link>https://developer.apple.com/news/?id=10312018b</link>
+<guid>https://developer.apple.com/news/?id=10312018b</guid>
+<description>iOS 12.1.1 beta (16C5036c)</description>
+<pubDate>Wed, 31 Oct 2018 10:00:00 PDT</pubDate>
+<content:encoded><![CDATA[iOS 12.1.1 beta (16C5036c)]]></content:encoded>
+</item>
+<item>
+<title>tvOS 12.1.1 beta (16K5035b)</title>
+<link>https://developer.apple.com/news/?id=10312018c</link>
+<guid>https://developer.apple.com/news/?id=10312018c</guid>
+<description>tvOS 12.1.1 beta (16K5035b)</description>
+<pubDate>Wed, 31 Oct 2018 10:00:00 PDT</pubDate>
+<content:encoded><![CDATA[tvOS 12.1.1 beta (16K5035b)]]></content:encoded>
+</item>
+<item>
+<title>Xcode 10.1 (10B61)</title>
+<link>https://developer.apple.com/news/?id=10302018a</link>
+<guid>https://developer.apple.com/news/?id=10302018a</guid>
+<description>Xcode 10.1 (10B61)</description>
+<pubDate>Tue, 30 Oct 2018 10:00:00 PDT</pubDate>
+<content:encoded><![CDATA[Xcode 10.1 (10B61)]]></content:encoded>
+</item>
+<item>
+<title>macOS Mojave 10.14.1 (18B75)</title>
+<link>https://developer.apple.com/news/?id=10302018b</link>
+<guid>https://developer.apple.com/news/?id=10302018b</guid>
+<description>macOS Mojave 10.14.1 (18B75)</description>
+<pubDate>Tue, 30 Oct 2018 10:00:00 PDT</pubDate>
+<content:encoded><![CDATA[macOS Mojave 10.14.1 (18B75)]]></content:encoded>
+</item>
+<item>
+<title>iOS 12.1 (16B92 | 16B93)</title>
+<link>https://developer.apple.com/news/?id=10302018c</link>
+<guid>https://developer.apple.com/news/?id=10302018c</guid>
+<description>iOS 12.1 (16B92 | 16B93)</description>
+<pubDate>Tue, 30 Oct 2018 10:00:00 PDT</pubDate>
+<content:encoded><![CDATA[iOS 12.1 (16B92 | 16B93)]]></content:encoded>
+</item>
+<item>
+<title>watchOS 5.1 (16R591)</title>
+<link>https://developer.apple.com/news/?id=10302018d</link>
+<guid>https://developer.apple.com/news/?id=10302018d</guid>
+<description>watchOS 5.1 (16R591)</description>
+<pubDate>Tue, 30 Oct 2018 10:00:00 PDT</pubDate>
+<content:encoded><![CDATA[watchOS 5.1 (16R591)]]></content:encoded>
+</item>
+<item>
+<title>tvOS 12.1 (16J602)</title>
+<link>https://developer.apple.com/news/?id=10302018e</link>
+<guid>https://developer.apple.com/news/?id=10302018e</guid>
+<description>tvOS 12.1 (16J602)</description>
+<pubDate>Tue, 30 Oct 2018 10:00:00 PDT</pubDate>
+<content:encoded><![CDATA[tvOS 12.1 (16J602)]]></content:encoded>
+</item>
+
+</channel>
+</rss>

@@ -1,4 +1,4 @@
-exports.handler = function(e, c) {
+exports.handler = function(event, context, callback) {
   const libxslt = require('libxslt');
   const fs = require("fs");
 
@@ -24,5 +24,14 @@ exports.handler = function(e, c) {
   var stylesheet = libxslt.parse(xsltString);
   var result = stylesheet.apply(xmlString);
 
-  c.succeed(result);
+  var response = {
+    "statusCode": 200,
+    "headers": {
+        "Content-Type": "application/rss+xml"
+    },
+    "body": result,
+    "isBase64Encoded": false
+  };
+
+  callback(null, response);
 } 
