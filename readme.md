@@ -39,12 +39,14 @@ For Mac users: Recommend using Docker for Mac. Install Docker and then in your w
 
 **Developing**
 
+Develop locally and you can test the response sent back from the function through `node test.js`. You can pass in args or context to the function if necessary. Response should always be `application/rss+xml`.
+
 Use Claudia to manage deployment of the package to lambda
 * Make sure your AWS_PROFILE is set to an account with deploy permissions
   * You can set the default profile in `~/.aws/credentials`
   * OR you can pass the `AWS_PROFILE=<profile>` parameter before issuing any command to `claudia`
 * `npm start` will give you a console gui to control which scripts are available in the package
-* You can deploy the package to AWS with `npm deploy` (which is defined in `package.json`)
+* You can deploy the package to AWS with `npm run deploy` (which is defined in `package.json`)
   * This only needs to be done once for that session.
 * You can run a test against Claudia's deployed package with `claudia test-lambda`
   * You can also view the AWS Console to inspect logs of the test result
