@@ -17,25 +17,26 @@ For Mac users: Recommend using Docker for Mac. Install Docker and then in your w
   * The -v flag makes your code directory available inside the container in a directory called “working”.
   * The -it flag means you get to interact with this container.
   * The --rm flag means Docker will remove the container when you’re finished. `Ubuntu` is the name of an official container image for Ubuntu.
-* Once inside the container, the repo will be mounted to `/working`.
-* Run `apt-get update`
-* Install Ubuntu build tools
-    * `apt-get install build-essential`
-* Install cURL
-  * `apt-get install curl`
-* Install Python
-  * `apt-get install python`
-* Install nvm
-  * `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
-* Put `nvm` in your path for the current shell session
-  * `source ~/.bashrc`
-* Install Node v8
-  * `nvm install 8`
-* Setup the project dependencies
-  * `npm install`
-* Install Claudia globally (for convenience)
-  * `npm install claudia -g`
-  * (Alternatively you can run `claudia` from `./node_modules/claudia/bin`)
+* Once inside the container, the repo will be mounted to `/working`. cd into that directory
+* Run the env configuration script in the current shell context `. ./config_env.sh` to setup your docker dev envionment...OR follow the steps below
+    * Run `apt-get update`
+    * Install Ubuntu build tools
+        * `apt-get install build-essential`
+    * Install cURL
+    * `apt-get install curl`
+    * Install Python
+    * `apt-get install python`
+    * Install nvm
+    * `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
+    * Put `nvm` in your path for the current shell session
+    * `source ~/.bashrc`
+    * Install Node v8
+    * `nvm install 8`
+    * Setup the project dependencies
+    * `npm install`
+    * Install Claudia globally (for convenience)
+    * `npm install claudia -g`
+        * (Alternatively you can always run `claudia` from `./node_modules/claudia/bin`)
 
 **Developing**
 
