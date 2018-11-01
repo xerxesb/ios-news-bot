@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "libxslt": "0.7"
+        "libxslt": "0.7",
+        "node-fetch": "^2.2.0"
     },
     "devDependencies": {
         "claudia": "^5.1.2",

@@ -39,7 +39,8 @@ For Mac users: Recommend using Docker for Mac. Install Docker and then in your w
 
 **Developing**
 
-Develop locally and you can test the response sent back from the function through `node test.js`. You can pass in args or context to the function if necessary. Response should always be `application/rss+xml`.
+Develop locally and you can test the response sent back from the function through `node test.js`.
+* Within `test.js` you can configure the func to pull from live data or from the local test data
 
 Use Claudia to manage deployment of the package to lambda
 * Make sure your AWS_PROFILE is set to an account with deploy permissions

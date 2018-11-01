@@ -1,7 +1,18 @@
 const app = require("./index.js");
 
-function callback(_, response) {
-    console.log(response);
+const event = {
+  "args": {
+    "localTest": true,
+    "testFile": "releases1.rss"
+  }
 }
 
-app.handler({}, {}, callback);
+const context = {
+  done: function() { }
+}
+
+function callback(_, response) {
+  console.log(response);
+}
+
+app.handler(event, context, callback);

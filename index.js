@@ -1,25 +1,33 @@
 exports.handler = function(event, context, callback) {
-  let inputFeed = getNewsFeed();
-  let outputFeed = filterFeedToOnlyIncludeiOS(inputFeed);
-  var response = generateResponse(outputFeed);
-
-  callback(null, response);
-} 
-
-function generateResponse(outputFeed) {
-  return {
-    "statusCode": 200,
-    "headers": {
-      "Content-Type": "application/rss+xml"
-    },
-    "body": outputFeed,
-    "isBase64Encoded": false
-  };
+  const args = getArgs(event);
+  executeHandler(args)
+    .then(result => { 
+      callback(null, result); // args: (err: {}, res)
+    })
 }
 
-function getNewsFeed() {
-  const fs = require("fs");
-  return fs.readFileSync("./testdata/releases1.rss").toString();
+function getArgs(e) {
+  return e != null ? e.args : { "localTest": false };
+}
+
+async function executeHandler(args) {
+  let inputFeed = await getNewsFeed(args);
+  let outputFeed = filterFeedToOnlyIncludeiOS(inputFeed);
+  var response = generateResponse(outputFeed);
+  return response;
+}
+
+async function getNewsFeed(args) {
+  if (args != null && args.localTest) {
+    const fs = require("fs");
+    return fs.readFileSync("./testdata/" + args.testFile).toString();
+  } else {
+    const feedUrl = "https://developer.apple.com/news/releases/rss/releases.rss";
+    const fetch = require("node-fetch");
+    const response = await fetch(feedUrl);
+    const body = await response.text();
+    return body;
+  }
 }
 
 function filterFeedToOnlyIncludeiOS(inputFeed) {
@@ -44,4 +52,15 @@ function filterFeedToOnlyIncludeiOS(inputFeed) {
 
   var stylesheet = libxslt.parse(xsltString);
   return stylesheet.apply(inputFeed);  
+}
+
+function generateResponse(outputFeed) {
+  return {
+    "statusCode": 200,
+    "headers": {
+      "Content-Type": "application/rss+xml"
+    },
+    "body": outputFeed,
+    "isBase64Encoded": false
+  };
 }
